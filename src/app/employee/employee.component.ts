@@ -111,4 +111,8 @@ export class EmployeeComponent {
     }
   }
 
+  ShowSomeData(){
+    alert("hello")
+  }
+
 }
