@@ -1,0 +1,94 @@
+<p>employee works!</p>
+
+<h1 *ngIf="visible">{{title}}</h1>
+
+<input type="radio" name="lol" (click)="Onchange(true)">True
+<input type="radio" name="lol" (click)="Onchange(false)">False
+
+
+<!-- <div *ngIf="IsVisible; then thenBlock; else elseBlock"></div>
+
+
+<ng-template #thenBlock>
+<p>
+    then Then then
+</p>
+</ng-template>
+
+<ng-template #elseBlock>
+    <p>
+        else Else else
+    </p>
+</ng-template>
+
+<p *ngIf="IsVisible">true</p>
+
+<P *ngIf="!IsVisible"> false</P>
+
+<select (change)="SetColor($event)">
+    <option value="">select</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+</select>
+
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="1">
+        <p>
+            ONE
+        </p>
+
+    </div>
+
+    <div *ngSwitchCase="2">
+        <p>
+            TWO
+        </p>
+
+    </div>
+
+    <div *ngSwitchCase="3">
+        <p>
+            TIGA
+        </p>
+
+    </div>
+</div> -->
+
+<table [ngStyle]="" border="1">
+    <thead>
+        <th>S/No</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>First Rec</th>
+        <th>Last Rec</th>
+
+    </thead>
+    <tbody>
+        
+        <tr *ngFor="let employee of Employee; let i=index; first as isFirst; last as isLast; trackBy: TrackByEmployeeName 
+        even as isEven; odd as isOdd"
+        [ngClass]="GetCss(isEven)">
+            
+            <td>{{i+1}}</td>
+            <td>{{employee.Name}}</td>
+            <td [ngStyle]="{'color': CheckAge(employee.Age)}">{{employee.Age}}</td>
+            <td>{{employee.Gender}}</td>
+            <td>{{isFirst}}</td>
+            <td>{{isLast}}</td>
+        </tr>
+    
+
+    </tbody>
+</table>
+
+
+<br>
+<br>
+<button (click)="GetMoreEmployee()">ADD</button>
+
+<br>
+<br>
+
+<p [ngClass]="'color1'"> testing out the color nonsense</p>
